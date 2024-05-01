@@ -1,4 +1,4 @@
-package social_network.dialogservice.dto;
+package social_network.dialogservice.dto.enums;
 
 public enum Status {
     SENT,

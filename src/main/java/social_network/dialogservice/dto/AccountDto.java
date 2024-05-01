@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import social_network.dialogservice.dto.enums.Role;
+import social_network.dialogservice.dto.enums.StatusCode;
 
 import java.time.LocalDateTime;
 

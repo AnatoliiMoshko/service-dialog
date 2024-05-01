@@ -152,4 +152,8 @@ public class DialogServiceImpl implements DialogService{
 
         return response;
     }
+
+    public void saveMessage(String message) {
+        // some code
+    }
 }

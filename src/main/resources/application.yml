@@ -1,1 +1,10 @@
-spring.application.name=dialog-service
+spring:
+  application:
+    name: microservice-dialog
+  kafka:
+    bootstrap-servers: localhost:9092
+
+app:
+  kafka:
+    kafkaMessageTopic: "message-topic"
+    kafkaGroupId: "dialog-service"

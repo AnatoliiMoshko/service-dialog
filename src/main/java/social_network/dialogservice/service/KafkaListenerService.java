@@ -1,5 +1,6 @@
 package social_network.dialogservice.service;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ public class KafkaListenerService {
 
     private final DialogServiceImpl dialogService;
 
-    public void listenMessage(String message) {
+    public void listenMessage(JsonNode message) {
         dialogService.saveMessage(message);
     }
 }

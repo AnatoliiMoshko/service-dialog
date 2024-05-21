@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeset:
+      id: create-messages
+      changes:
+        - createTable:
+            tableName: messages
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: time
+                  type: timestamp with time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: author_messages_fk
+                    referencedTableName: author
+                    referencedColumnNames: id
+                    nullable: false
+              - column:
+                  name: message_text
+                  type: VARCHAR(4096)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: read_status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: dialog_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: dialog_messages_fk
+                    referencedTableName: dialog
+                    referencedColumnNames: id

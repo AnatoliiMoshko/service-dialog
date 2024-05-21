@@ -4,17 +4,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import social_network.dialogservice.model.DialogEntity;
+import social_network.dialogservice.model.Dialog;
 
 import java.util.List;
 
 @Repository
-public interface DialogRepository extends JpaRepository<DialogEntity, Long> {
+public interface DialogRepository extends JpaRepository<Dialog, Long> {
 
-    DialogEntity findByAuthorIdAndRecipientId(Long authorId, Long recipientId);
+    Dialog findByAuthorIdAndRecipientId(Long authorId, Long recipientId);
 
-    List<DialogEntity> findAllByAuthorIdOrAllRecipientId(Long authorId, Long recipientId);
+    List<Dialog> findAllByAuthorIdOrAllRecipientId(Long authorId, Long recipientId);
 
-    Page<DialogEntity> findAllByAuthorIdOrRecipientIdOrderByLastMessageDesc(Long authorId, Long recipientId, Pageable pageable);
+    Page<Dialog> findAllByAuthorIdOrRecipientIdOrderByLastMessageDesc(Long authorId, Long recipientId, Pageable pageable);
 
 }

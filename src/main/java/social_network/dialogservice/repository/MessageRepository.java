@@ -4,11 +4,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import social_network.dialogservice.model.MessageEntity;
+import social_network.dialogservice.model.Message;
 
 @Repository
-public interface MessageRepository extends JpaRepository<MessageEntity, Long> {
+public interface MessageRepository extends JpaRepository<Message, Long> {
 
-    Page<MessageEntity> findMessageEntitiesByDialogIdOrderByTimeDesc(Long dialogId, Pageable pageable);
+    Page<Message> findMessageEntitiesByDialogIdOrderByTimeDesc(Long dialogId, Pageable pageable);
 
 }

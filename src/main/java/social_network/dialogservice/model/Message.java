@@ -3,12 +3,12 @@ package social_network.dialogservice.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Data
 @Table(name = "messages")
-public class MessageEntity {
+public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class MessageEntity {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime time;
+    private ZonedDateTime time;
 
     @Column(name = "author_id", nullable = false)
     private Long authorId;
@@ -29,5 +29,5 @@ public class MessageEntity {
 
     @ManyToOne
     @JoinColumn(name = "dialog_id", referencedColumnName = "id")
-    private DialogEntity dialogId;
+    private Dialog dialogId;
 }

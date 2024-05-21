@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeset:
+      id: create-dialogs
+      changes:
+        - createTable:
+            tableName: dialogs
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: author_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: author_dialogs_fk
+                    referencedTableName: author
+                    referencedColumnNames: id
+                    nullable: false
+              - column:
+                  name: recipient_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: recipient_dialogs_fk
+                    referencedTableName: recipient
+                    referencedColumnNames: id
+                    nullable: false
+              - column:
+                  name: unread_count_author
+                  type: bigint
+              - column:
+                  name: unread_count_recipient
+                  type: bigint
+              - column:
+                  name: last_message
+                  type: bigint

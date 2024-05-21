@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "dialogs")
-public class DialogEntity {
+public class Dialog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +24,12 @@ public class DialogEntity {
     @Column(name = "unread_count_author")
     private Long unreadCountAuthor;
 
-    @Column(name = "unread_count_author")
+    @Column(name = "unread_count_recipient")
     private Long unreadCountRecipient;
 
     @Column(name = "last_message")
     private Long lastMessage;
 
     @OneToMany(mappedBy = "dialog", cascade = CascadeType.ALL)
-    private List<MessageEntity> messages;
+    private List<Message> messages;
 }
